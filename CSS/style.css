@@ -1,0 +1,38 @@
+/*style the background of the page*/
+* {
+	background-color: whitesmoke;	
+}
+/*styling the navigation bar of the website */
+
+.navBar {
+	background-color: white;
+	overflow: hidden;
+}
+
+.navBar a {
+	color: #f2f2f2;
+	text-align: justify;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	display: inline-block;
+	border: none;
+}
+
+.navBar a:hover {
+	background-color: lightsteelblue;
+	color: black;
+}
+
+.navBar a.active {
+	background-color: floralwhite;
+	color: black;
+}
+
+.navBar {
+	text-align: left;
+}
+
+#logo {
+    max-width: 5%;
+}
