@@ -1,0 +1,19 @@
+#banner-bar {
+background-color: white;
+color: black;
+}
+
+#logo {
+    height: 5%;
+    width: 5%;
+    border-radius: 5pt;
+    float: left;
+}
+
+#pages {
+    color: white;
+}
+
+h1{
+    color: black;
+}
