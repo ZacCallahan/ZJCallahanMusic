@@ -10,6 +10,12 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: #f9f8f6;
   color: #222;
+  transition: all 0.3s ease;
+}
+
+/* Prevent scrolling when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
 }
 
 /* Navbar */
@@ -23,6 +29,13 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav-left .logo {
@@ -33,6 +46,8 @@ body {
   display: flex;
   list-style: none;
   gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-center li a {
@@ -47,15 +62,172 @@ body {
   color: #cca764;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .nav-right a {
-  margin-left: 20px;
   color: #444;
   font-size: 1.3rem;
   transition: color 0.3s;
+  text-decoration: none;
 }
 
 .nav-right a:hover {
   color: #b39c5d;
+}
+
+/* Dark mode toggle styling */
+.dark-mode-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.dark-mode-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.slider:hover {
+  background-color: #bbb;
+}
+
+input:checked + .slider {
+  background-color: #cca764;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Hamburger Menu Styling - FIXED ANIMATION */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1100;
+  transition: all 0.3s ease;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  transform-origin: center;
+  display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 91px; /* Height of navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 91px);
+  background-color: #fff;
+  z-index: 999;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.mobile-nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+  color: #cca764;
+}
+
+.mobile-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.mobile-social-links a {
+  color: #444;
+  font-size: 1.8rem;
+  transition: color 0.3s;
+}
+
+.mobile-social-links a:hover {
+  color: #b39c5d;
+}
+
+.mobile-dark-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 /* Hero Section */
@@ -91,7 +263,7 @@ main.hero {
   border-radius: 8px;
 }
 
-
+/* About Page */
 .about-container {
   max-width: 800px;
   margin: 2rem auto 40px;
@@ -138,6 +310,7 @@ main.hero {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Compositions Page */
 .compositions-page {
   max-width: 900px;
   margin: 0 auto;
@@ -166,12 +339,6 @@ main.hero {
   justify-items: center;
 }
 
-@media (max-width: 850px) {
-  .track-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-
 .track-card {
   max-width: 600px;
   max-height: 250px;
@@ -198,13 +365,8 @@ main.hero {
   border: none;
   border-radius: 6px;
 }
-  footer {
-  text-align: center;
-  padding: 0.5rem 0;
-  background-color: #f4f4f4;
-  margin-top: auto;
-}
 
+/* Sheet Music Page */
 .sheet-music-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -291,10 +453,68 @@ main.hero {
 }
 
 .download-btn:hover {
-  background-color: #cca764;
+  background-color: #b39c5d;
 }
 
-/* Dark mode styles */
+/* Footer */
+footer {
+  text-align: center;
+  padding: 0.5rem 0;
+  background-color: #f4f4f4;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 850px) {
+  .track-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-center,
+  .nav-right {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .nav-left .logo {
+    height: 50px;
+  }
+  
+  .mobile-menu {
+    top: 71px; /* Adjusted for smaller navbar */
+    height: calc(100vh - 71px);
+    padding: 20px 15px;
+  }
+  
+  .mobile-nav-links a {
+    font-size: 1.1rem;
+  }
+  
+  .mobile-social-links a {
+    font-size: 1.6rem;
+  }
+}
+
+/* Dark Mode Styles */
 body.dark {
   background-color: #121212;
   color: #e0e0e0;
@@ -305,20 +525,31 @@ body.dark .navbar {
   border-bottom: 1px solid #333;
 }
 
-body.dark .nav-center li a {
-  color: #ccc;
-}
-
-body.dark .nav-center li a:hover {
-  color: #cca764;
-}
-
+body.dark .nav-center li a,
 body.dark .nav-right a {
-  color: #bbb;
+  color: #e0e0e0;
 }
 
+body.dark .nav-center li a:hover,
 body.dark .nav-right a:hover {
   color: #cca764;
+}
+
+body.dark .hamburger span {
+  background-color: #e0e0e0;
+}
+
+body.dark .mobile-menu {
+  background-color: #2d2d2d;
+}
+
+body.dark .mobile-nav-links a,
+body.dark .mobile-social-links a {
+  color: #e0e0e0;
+}
+
+body.dark .mobile-nav-links a {
+  border-bottom-color: #444;
 }
 
 body.dark .hero {
@@ -343,87 +574,15 @@ body.dark footer {
   color: #aaa;
 }
 
-/* Toggle switch style */
-.dark-mode-toggle {
-  cursor: pointer;
-  margin-left: 20px;
-  font-size: 1.3rem;
-  color: #666;
-  transition: color 0.3s ease;
-}
-
-.dark-mode-toggle:hover {
-  color: #cca764;
-}
-
-/* Dark mode toggle switch */
-.dark-mode-toggle {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 26px;
-  margin-left: 1rem;
-  margin-right: 0.5rem;
-}
-
-.dark-mode-toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.dark-mode-toggle .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border-radius: 34px;
-  transition: background-color 0.3s ease;
-}
-
-.dark-mode-toggle .slider::before {
-  content: "";
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-/* Checked style */
-.dark-mode-toggle input:checked + .slider {
-  background-color: #cca764;
-}
-
-.dark-mode-toggle input:checked + .slider::before {
-  transform: translateX(24px);
-}
-
-.dark-mode-toggle .slider:hover {
-  background-color: #bbb;
-}
-
-/* Ensure all text and backgrounds change in dark mode */
+/* Ensure all text changes in dark mode */
 body.dark h1,
 body.dark h2,
 body.dark h3,
 body.dark p,
-body.dark a,
 body.dark .tagline,
 body.dark .intro,
 body.dark .caption,
 body.dark .track-title {
-  color: #e0e0e0;
-}
-
-body.dark .nav-center li a,
-body.dark .nav-right a {
   color: #e0e0e0;
 }
 
