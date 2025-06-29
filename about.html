@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zac Callahan - Composer</title>
-  <!-- JavaScript file -->
-  <script src="Script/script.js"></script>
+  <title>About - Zac Callahan - Composer</title>
+
   <!-- FontAwesome link -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 
+  <!-- CSS Styling  -->
   <link rel="stylesheet" href="CSS/styles.css" />
+
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="nav-left">
         <img src="Assets/logo.png" alt="Logo" class="logo" />
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
 
       <ul class="nav-center">
@@ -40,29 +46,52 @@
         </label>
         <i class="fas fa-moon"></i>
       </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <div class="mobile-nav-links">
+          <a href="index.html">Home</a>
+          <a href="compositions.html">Compositions</a>
+          <a href="sheet-music.html">Sheet Music</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="mobile-social-links">
+          <a href="https://spotify.com" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="mobile-dark-mode">
+          <label class="dark-mode-toggle mobile" aria-label="Toggle Dark Mode">
+            <input type="checkbox" id="darkToggleMobile" />
+            <span class="slider"></span>
+          </label>
+          <i class="fas fa-moon"></i>
+        </div>
+      </div>
     </nav>
   </header>
 
   <main class="hero">
-  <div class="about-container">
-    <img src="Assets/portrait.png" alt="Zac Callahan Portrait" class="about-image" />
-    <h1>About Me</h1>
-    <p class="about-intro">
-      Hello! My name is Zac Callahan, an amateur composer and musician passionate about all things music. With a background in music performance, I like to spend my spare time performing and composing orchestral pieces.
-    </p>
+    <div class="about-container">
+      <img src="Assets/portrait.png" alt="Zac Callahan Portrait" class="about-image" />
+      <h1>About Me</h1>
+      <p class="about-intro">
+        Hello! My name is Zac Callahan, an amateur composer and musician passionate about all things music. With a background in music performance, I like to spend my spare time performing and composing orchestral pieces.
+      </p>
 
-    <p>
-      I am proficient in playing guitar and trumpet, but also dabble in piano. When I'm not playing on my own, I am an active member of the Monash Philharmonic Orchestra where I play first Trumpet.
-    </p>
+      <p>
+        I am proficient in playing guitar and trumpet, but also dabble in piano. When I'm not playing on my own, I am an active member of the Monash Philharmonic Orchestra where I play first Trumpet.
+      </p>
 
-    <p>
-      My biggest musical inspirations are Beethoven, Mahler, John Williams, Howard Shore, Hans Zimmer, John Powell, Marty O'Donnell just to name a few! Thanks for visiting — feel free to explore a selection of my work on this site, or <a href="mailto:calla1296@gmail.com">get in touch</a>!
-    </p>
-  </div>
-</main>
+      <p>
+        My biggest musical inspirations are Beethoven, Mahler, John Williams, Howard Shore, Hans Zimmer, John Powell, Marty O'Donnell just to name a few! Thanks for visiting — feel free to explore a selection of my work on this site, or <a href="mailto:calla1296@gmail.com">get in touch</a>!
+      </p>
+    </div>
+  </main>
 
   <footer>
     <p>© 2025 Zac Callahan - All rights reserved</p>
   </footer>
+  <!-- JavaScript file -->
+  <script src="Script/script.js"></script>
 </body>
 </html>

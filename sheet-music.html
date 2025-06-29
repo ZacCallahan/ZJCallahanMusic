@@ -4,23 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zac Callahan - Sheet Music</title>
-  <!-- JavaScript file -->
-  <script src="Script/script.js"></script>
+  
+  <!-- FontAwesome link -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- CSS Styling  -->
   <link rel="stylesheet" href="CSS/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="nav-left">
         <img src="Assets/logo.png" alt="Logo" class="logo" />
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
+
       <ul class="nav-center">
         <li><a href="index.html">Home</a></li>
         <li><a href="compositions.html">Compositions</a></li>
         <li><a href="sheet-music.html" class="active">Sheet Music</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
+
       <div class="nav-right">
         <!-- Social links -->
         <a href="https://spotify.com" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
@@ -32,6 +44,27 @@
           <span class="slider"></span>
         </label>
         <i class="fas fa-moon"></i>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <div class="mobile-nav-links">
+          <a href="index.html">Home</a>
+          <a href="compositions.html">Compositions</a>
+          <a href="sheet-music.html">Sheet Music</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="mobile-social-links">
+          <a href="https://spotify.com" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="mobile-dark-mode">
+          <label class="dark-mode-toggle mobile" aria-label="Toggle Dark Mode">
+            <input type="checkbox" id="darkToggleMobile" />
+            <span class="slider"></span>
+          </label>
+          <i class="fas fa-moon"></i>
+        </div>
       </div>
     </nav>
   </header>
@@ -106,5 +139,8 @@
   <footer>
     <p>© 2025 Zac Callahan - All rights reserved</p>
   </footer>
+  
+  <!-- JavaScript file -->
+  <script src="Script/script.js"></script>
 </body>
 </html>

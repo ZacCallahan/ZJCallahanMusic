@@ -5,23 +5,44 @@ window.addEventListener('DOMContentLoaded', () => {
   const navRight = document.querySelector('.nav-right');
   const mobileMenu = document.querySelector('.mobile-menu');
 
-  // Dark mode code (unchanged)
+  // Dark mode code with mobile toggle support
+  const toggleMobile = document.querySelector('#darkToggleMobile');
+  
   const isDark = localStorage.getItem('darkMode') === 'true';
   if (isDark) document.body.classList.add('dark');
   else document.body.classList.remove('dark');
+  
+  // Set both toggles to the same state
+  if (toggle) toggle.checked = isDark;
+  if (toggleMobile) toggleMobile.checked = isDark;
+  
+  // Function to handle dark mode changes
+  const handleDarkModeChange = (checked) => {
+    document.body.classList.toggle('dark', checked);
+    localStorage.setItem('darkMode', checked);
+    // Sync both toggles
+    if (toggle) toggle.checked = checked;
+    if (toggleMobile) toggleMobile.checked = checked;
+  };
+  
+  // Add event listeners to both toggles
   if (toggle) {
-    toggle.checked = isDark;
     toggle.addEventListener('change', () => {
-      const checked = toggle.checked;
-      document.body.classList.toggle('dark', checked);
-      localStorage.setItem('darkMode', checked);
+      handleDarkModeChange(toggle.checked);
     });
   }
+  
+  if (toggleMobile) {
+    toggleMobile.addEventListener('change', () => {
+      handleDarkModeChange(toggleMobile.checked);
+    });
+  }
+  
+  // Set initial state based on user preference
   const userPref = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const savedPref = localStorage.getItem('darkMode');
   if (savedPref === null && userPref) {
-    document.body.classList.add('dark');
-    localStorage.setItem('darkMode', 'true');
+    handleDarkModeChange(true);
   }
 
   // Hamburger toggle logic
