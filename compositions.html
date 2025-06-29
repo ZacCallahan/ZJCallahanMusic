@@ -11,7 +11,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 
-  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/styles.css" />
 </head>
 <body>
   <header>
@@ -28,36 +28,56 @@
       </ul>
 
       <div class="nav-right">
+        <!-- Social links -->
         <a href="https://spotify.com" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
         <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+
+        <!-- Dark Mode Toggle -->
+        <label class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+          <input type="checkbox" id="darkToggle" />
+          <span class="slider"></span>
+        </label>
+        <i class="fas fa-moon"></i>
       </div>
     </nav>
   </header>
 
   <main class="compositions-page">
   <h1>Compositions</h1>
-  <p class="intro">A selection of my original works. Listen below.</p>
+  <p class="intro">Please listen to a selection of some of my original compositions below!</p>
   <div class="track-wrapper">
-    <div class="track-card">
-      <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yourusername/track1&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
-    </div>
-    <div class="track-card">
-      <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yourusername/track2&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
-    </div>
-    <div class="track-card">
-      <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yourusername/track3&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
-    </div>
-    <div class="track-card">
-      <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yourusername/track4&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
-    </div>
-    <div class="track-card">
-      <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yourusername/track5&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
-    </div>
+  <div class="track-card">
+    <h2 class="track-title">Symphony 1 (Excerpt)</h2>
+    <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/symphony-no-1-excerpt&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+  </div>
+  <div class="track-card">
+    <h2 class="track-title">Hisaishi Mood</h2>
+    <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/hisaishi-mood&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+  </div>
+  <div class="track-card">
+    <h2 class="track-title">Ripple</h2>
+    <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/ripple&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+  </div>
+  <div class="track-card">
+    <h2 class="track-title">Kangaroo Waltz</h2>
+    <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/kangaroo-waltz&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+  </div>
+  <div class="track-card">
+    <h2 class="track-title">Natsu (WIP)</h2>
+    <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/natsu-wip&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+  </div>
+   <div class="track-card">
+    <h2 class="track-title">Whimsy (WIP)</h2>
+    <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/whimsy&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+  </div>
+</div>
   </div>
 </main>
 
   <footer>
-    <p>© 2025 Zac Callahan. All rights reserved.</p>
+    <p>© 2025 Zac Callahan - All rights reserved</p>
   </footer>
+    <!-- JavaScript file -->
+  <script src="Script/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,432 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f8f6;
+  color: #222;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left .logo {
+  height: 70px;
+}
+
+.nav-center {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-center li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-center li a:hover {
+  color: #cca764;
+}
+
+.nav-right a {
+  margin-left: 20px;
+  color: #444;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.nav-right a:hover {
+  color: #b39c5d;
+}
+
+/* Hero Section */
+main.hero {
+  flex: 1;
+  text-align: center;
+  padding: 5px 20px 60px;
+  background-color: #fff;
+  background-image: linear-gradient(to bottom, #f9f8f6, #ffffff);
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Larger, responsive iframe for video */
+.media-container iframe {
+  width: 80vw;
+  height: 45vw; /* 16:9 aspect ratio */
+  max-width: 1280px;
+  max-height: 720px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+
+.about-container {
+  max-width: 800px;
+  margin: 2rem auto 40px;
+  padding: 30px 20px 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.about-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.about-container a {
+  color: #cca764;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-container a:hover {
+  text-decoration: underline;
+}
+
+.about-image {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.compositions-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  text-align: center;
+}
+
+.compositions-page h1 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+  margin-top: 0rem;
+}
+
+.compositions-page .intro {
+  color: #666;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.track-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(500px, 1fr));
+  gap: 3rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+@media (max-width: 850px) {
+  .track-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.track-card {
+  max-width: 600px;
+  max-height: 250px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  padding: 0.75rem;
+  transition: transform 0.2s ease;
+  text-align: left;
+}
+
+.track-card .track-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.50rem;
+  color: #222;
+  font-weight: 600;
+  text-align: center;
+}
+
+.track-card iframe {
+  width: 100%;
+  height: 166px;
+  border: none;
+  border-radius: 6px;
+}
+  footer {
+  text-align: center;
+  padding: 0.5rem 0;
+  background-color: #f4f4f4;
+  margin-top: auto;
+}
+
+.sheet-music-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+  text-align: center;
+}
+
+.sheet-music-page h1{
+  font-size: 2.8rem;
+}
+
+.sheet-music-page .intro {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.score-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.score-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 0.6rem;
+  width: 100%;
+  max-width: 340px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(1);
+}
+
+.score-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.score-card > *:not(:last-child) {
+  margin-bottom: 0.2rem;
+}
+
+.caption {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+.score-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  background-color: #cca764;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn i {
+  pointer-events: none;
+}
+
+.download-btn:hover {
+  background-color: #cca764;
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .navbar {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+body.dark .nav-center li a {
+  color: #ccc;
+}
+
+body.dark .nav-center li a:hover {
+  color: #cca764;
+}
+
+body.dark .nav-right a {
+  color: #bbb;
+}
+
+body.dark .nav-right a:hover {
+  color: #cca764;
+}
+
+body.dark .hero {
+  background-image: none;
+  background-color: #1a1a1a;
+}
+
+body.dark .about-container,
+body.dark .track-card,
+body.dark .score-card {
+  background-color: #1f1f1f;
+  color: #ddd;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .download-btn {
+  background-color: #b38b4d;
+}
+
+body.dark footer {
+  background-color: #1c1c1c;
+  color: #aaa;
+}
+
+/* Toggle switch style */
+.dark-mode-toggle {
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 1.3rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  color: #cca764;
+}
+
+/* Dark mode toggle switch */
+.dark-mode-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+.dark-mode-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.dark-mode-toggle .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle .slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Checked style */
+.dark-mode-toggle input:checked + .slider {
+  background-color: #cca764;
+}
+
+.dark-mode-toggle input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+.dark-mode-toggle .slider:hover {
+  background-color: #bbb;
+}
+
+/* Ensure all text and backgrounds change in dark mode */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark a,
+body.dark .tagline,
+body.dark .intro,
+body.dark .caption,
+body.dark .track-title {
+  color: #e0e0e0;
+}
+
+body.dark .nav-center li a,
+body.dark .nav-right a {
+  color: #e0e0e0;
+}
+
+body.dark .about-container a {
+  color: #cca764;
+}
