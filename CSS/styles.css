@@ -42,6 +42,15 @@ body.menu-open {
   height: 70px;
 }
 
+/* Logo switching for dark mode */
+.logo-light {
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
 .nav-center {
   display: flex;
   list-style: none;
@@ -230,40 +239,77 @@ input:checked + .slider:before {
   gap: 15px;
 }
 
-/* Hero Section */
+/* Hero Section with Video Background */
 main.hero {
   flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 91px); /* Subtract navbar height */
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
   text-align: center;
-  padding: 5px 20px 60px;
-  background-color: #fff;
-  background-image: linear-gradient(to bottom, #f9f8f6, #ffffff);
+  padding: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
-  color: #222;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .tagline {
   font-size: 1.2rem;
-  color: #666;
+  color: #f0f0f0;
   margin-bottom: 40px;
 }
 
-/* Larger, responsive iframe for video */
+/* Remove old media container styles */
 .media-container iframe {
-  width: 80vw;
-  height: 45vw; /* 16:9 aspect ratio */
-  max-width: 1280px;
-  max-height: 720px;
-  border: none;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  display: none;
 }
 
 /* About Page */
+main.about-page {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f8f6;
+}
+
 .about-container {
   max-width: 800px;
   margin: 2rem auto 40px;
@@ -428,9 +474,10 @@ main.hero {
 
 .score-card img {
   width: 100%;
-  height: auto;
+  height: 400px; /* Fixed height for consistency */
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: cover; /* Maintains aspect ratio while filling the space */
+  object-position: top; /* Shows the top portion of the sheet music */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -471,6 +518,19 @@ footer {
   }
 }
 
+/* Tablet and smaller desktop screens */
+@media (max-width: 992px) {
+  .score-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+  }
+  
+  .sheet-music-page {
+    padding: 2rem 1.5rem 4rem;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 20px;
@@ -488,14 +548,57 @@ footer {
   .mobile-menu {
     display: block;
   }
+  
+  /* Mobile hero adjustments */
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  /* Mobile sheet music layout - 2 columns */
+  .score-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 600px;
+  }
+  
+  .score-card {
+    max-width: 280px;
+  }
+  
+  .sheet-music-page {
+    padding: 1.5rem 1rem 3rem;
+  }
+  
+  .sheet-music-page h1 {
+    font-size: 2.2rem;
+  }
+  
+  .sheet-music-page .intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
 }
 
+/* Small mobile screens - 1 column */
 @media (max-width: 480px) {
   .navbar {
     padding: 10px 15px;
   }
   
   .nav-left .logo {
+    height: 50px;
+  }
+  
+  /* Logo switching for mobile dark mode */
+  .logo-light {
+    height: 50px;
+  }
+  
+  .logo-dark {
     height: 50px;
   }
   
@@ -511,6 +614,34 @@ footer {
   
   .mobile-social-links a {
     font-size: 1.6rem;
+  }
+  
+  /* Mobile hero adjustments */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 0.9rem;
+  }
+  
+  /* Single column layout for very small screens */
+  .score-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 320px;
+  }
+  
+  .score-card {
+    max-width: 300px;
+  }
+  
+  .sheet-music-page h1 {
+    font-size: 1.8rem;
+  }
+  
+  .sheet-music-page .intro {
+    font-size: 0.95rem;
   }
 }
 
@@ -552,9 +683,14 @@ body.dark .mobile-nav-links a {
   border-bottom-color: #444;
 }
 
-body.dark .hero {
-  background-image: none;
-  background-color: #1a1a1a;
+/* Dark mode video overlay */
+body.dark .video-overlay {
+  background: rgba(0, 0, 0, 0.5); /* Darker overlay for dark mode */
+}
+
+/* Dark mode about page */
+body.dark main.about-page {
+  background-color: #121212;
 }
 
 body.dark .about-container,
@@ -588,4 +724,13 @@ body.dark .track-title {
 
 body.dark .about-container a {
   color: #cca764;
+}
+
+/* Dark mode logo switching */
+body.dark .logo-light {
+  display: none;
+}
+
+body.dark .logo-dark {
+  display: block;
 }

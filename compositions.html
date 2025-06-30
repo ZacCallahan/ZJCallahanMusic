@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zac Callahan - Compositions</title>
 
+  <!-- DNS Prefetch for SoundCloud -->
+  <link rel="dns-prefetch" href="https://w.soundcloud.com">
+  <link rel="dns-prefetch" href="https://api.soundcloud.com">
+  <link rel="dns-prefetch" href="https://i1.sndcdn.com">
+  <link rel="dns-prefetch" href="https://cf-hls-media.sndcdn.com">
+
+  <!-- Preload SoundCloud API -->
+  <link rel="preload" href="https://w.soundcloud.com/player/api.js" as="script">
+
   <!-- FontAwesome link -->
   <link
     rel="stylesheet"
@@ -17,7 +26,8 @@
   <header>
     <nav class="navbar">
       <div class="nav-left">
-        <img src="Assets/logo.png" alt="Logo" class="logo" />
+        <img src="Assets/logo.png" alt="Logo" class="logo logo-light" />
+        <img src="Assets/logo-dark.png" alt="Logo" class="logo logo-dark" />
         <div class="hamburger">
           <span></span>
           <span></span>
@@ -34,7 +44,7 @@
 
       <div class="nav-right">
         <!-- Social links -->
-        <a href="https://spotify.com" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+        <a href="https://open.spotify.com/artist/1PnvmzPFCPSqe1toCb2gGx" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
         <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
 
         <!-- Dark Mode Toggle -->
@@ -54,7 +64,7 @@
           <a href="about.html">About</a>
         </div>
         <div class="mobile-social-links">
-          <a href="https://spotify.com" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+          <a href="https://open.spotify.com/artist/1PnvmzPFCPSqe1toCb2gGx" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
           <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="mobile-dark-mode">
@@ -74,27 +84,51 @@
     <div class="track-wrapper">
       <div class="track-card">
         <h2 class="track-title">Symphony 1 (Excerpt)</h2>
-        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/symphony-no-1-excerpt&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+        <iframe 
+          data-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/symphony-no-1-excerpt&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&visual=false"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
       </div>
       <div class="track-card">
         <h2 class="track-title">Hisaishi Mood</h2>
-        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/hisaishi-mood&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+        <iframe 
+          data-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/hisaishi-mood&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&visual=false"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
       </div>
       <div class="track-card">
         <h2 class="track-title">Ripple</h2>
-        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/ripple&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+        <iframe 
+          data-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/ripple&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&visual=false"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
       </div>
       <div class="track-card">
         <h2 class="track-title">Kangaroo Waltz</h2>
-        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/kangaroo-waltz&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+        <iframe 
+          data-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/kangaroo-waltz&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&visual=false"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
       </div>
       <div class="track-card">
         <h2 class="track-title">Natsu (WIP)</h2>
-        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/natsu-wip&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+        <iframe 
+          data-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/natsu-wip&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&visual=false"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
       </div>
       <div class="track-card">
         <h2 class="track-title">Whimsy (WIP)</h2>
-        <iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/whimsy&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" allow="autoplay"></iframe>
+        <iframe 
+          data-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zac-callahan-9526532/whimsy&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&visual=false"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
       </div>
     </div>
   </main>
