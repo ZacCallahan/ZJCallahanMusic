@@ -526,6 +526,8 @@ footer {
   }
 }
 
+/* Replace the existing mobile responsive sections with these updated styles */
+
 /* MOBILE RESPONSIVE IMPROVEMENTS*/
 @media (max-width: 400px) {
   .navbar {
@@ -545,19 +547,26 @@ footer {
     display: block;
   }
   
-  /* MOBILE IMPROVEMENTS */
+  /* MOBILE HERO VIDEO IMPROVEMENTS */
   main.hero {
-    min-height: 70vh;
+    min-height: 50vh; /* Reduced from 70vh */
+    max-height: 50vh; /* Added max-height constraint */
   }
   
   .video-background {
     height: 100%;
+    max-height: 50vh; /* Constrain video container height */
+    overflow: hidden;
   }
   
   .video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: center center;
     opacity: 0.85;
-    filter: blur(0.5px); 
+    filter: blur(0.5px);
+    /* Remove transform scale to prevent overflow */
   }
   
   .video-overlay {
@@ -565,17 +574,19 @@ footer {
   }
   
   .hero-content {
-    padding: 30px 20px;
+    padding: 20px 15px; /* Reduced padding */
+    position: relative;
+    z-index: 1;
   }
   
   .hero-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 2.2rem; /* Slightly reduced */
+    margin-bottom: 12px;
   }
   
   .tagline {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
+    font-size: 1rem;
+    margin-bottom: 20px;
   }
   
   /* Mobile sheet music layout in 2 columns */
@@ -612,7 +623,6 @@ footer {
     height: 50px;
   }
   
-
   .logo-light {
     height: 50px;
   }
@@ -635,34 +645,38 @@ footer {
     font-size: 1.6rem;
   }
   
-  
+  /* MOBILE HERO VIDEO IMPROVEMENTS */
   main.hero {
-    min-height: 60vh; /
+    min-height: 45vh; /* Further reduced for smaller screens */
+    max-height: 45vh;
+  }
+  
+  .video-background {
+    max-height: 45vh;
   }
   
   .hero-content {
-    padding: 20px 15px;
+    padding: 15px 12px; /* More compact padding */
   }
   
   .hero-content h1 {
-    font-size: 2rem;
-    margin-bottom: 12px;
+    font-size: 1.8rem; /* Smaller text for small screens */
+    margin-bottom: 10px;
   }
   
   .tagline {
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
   }
   
-
   .video-background video {
     opacity: 0.8;
     filter: blur(1px);
-    transform: scale(1.05); 
+    /* Removed transform scale that was causing overflow */
   }
   
   .video-overlay {
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
   }
   
   /* Single columns for small screens */
@@ -685,21 +699,25 @@ footer {
   }
 }
 
-/* Landscape orientation */
+/* Landscape orientation - keep video smaller in landscape too */
 @media (max-width: 768px) and (orientation: landscape) {
   main.hero {
-    min-height: 80vh;
+    min-height: 60vh; /* Reduced from 80vh */
+    max-height: 60vh;
+  }
+  
+  .video-background {
+    max-height: 60vh;
   }
   
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem; /* Slightly smaller */
   }
   
   .tagline {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
-
 /* Dark Mode Styles */
 body.dark {
   background-color: #121212;
