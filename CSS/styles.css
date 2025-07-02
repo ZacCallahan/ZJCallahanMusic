@@ -275,6 +275,33 @@ main.hero {
   z-index: -1;
 }
 
+/* Hero content - hidden by default on ALL screen sizes */
+.hero-content {
+  display: none !important;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f8f6;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  margin: 0 auto 8px auto;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #222;
+  text-align: center;
+}
+
+.hero-content .tagline {
+  font-size: 1.1rem;
+  margin: 0 auto;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+}
+
 .tagline {
   font-size: 1.4rem;
   margin-bottom: 30px;
@@ -517,12 +544,22 @@ footer {
   .sheet-music-page {
     padding: 2rem 1.5rem 4rem;
   }
+  
+  /* Ensure hero content stays hidden on tablets/desktop */
+  .hero-content {
+    display: none !important;
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 850px) {
   .track-wrapper {
     grid-template-columns: 1fr;
+  }
+  
+  /* Ensure hero content stays hidden on smaller desktop screens */
+  .hero-content {
+    display: none !important;
   }
 }
 
@@ -549,14 +586,13 @@ footer {
   main.hero {
     min-height: 50vh;
     max-height: 50vh;
-    padding: 1vh 0; /* Minimal padding */
   }
   
   .video-background {
-    height: calc(50vh - 2vh); /* Account for minimal padding */
-    max-height: calc(50vh - 2vh);
+    height: 50vh;
+    max-height: 50vh;
     overflow: hidden;
-    top: 1vh; /* Center the video vertically */
+    top: 0;
   }
   
   .video-background video {
@@ -572,20 +608,26 @@ footer {
     background: rgba(0, 0, 0, 0.45);
   }
   
+  /* Show hero content ONLY on mobile */
   .hero-content {
-    padding: 20px 15px;
-    position: relative;
-    z-index: 1;
+    display: block !important;
+    padding: 20px;
+    background-color: #f9f8f6;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
   }
   
   .hero-content h1 {
     font-size: 2.2rem;
-    margin-bottom: 12px;
+    margin: 0 auto 12px auto;
+    text-align: center;
   }
   
-  .tagline {
-    font-size: 1rem;
-    margin-bottom: 20px;
+  .hero-content .tagline {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0 auto;
   }
   
   /* Mobile sheet music layout in 2 columns */
@@ -649,27 +691,28 @@ footer {
   main.hero {
     min-height: 45vh;
     max-height: 45vh;
-    padding: 1vh 0; /* Minimal padding for smaller screens */
   }
   
   .video-background {
-    height: calc(45vh - 2vh); /* Account for minimal padding */
-    max-height: calc(45vh - 2vh);
-    top: 1vh; /* Center the video vertically */
+    height: 45vh;
+    max-height: 45vh;
   }
   
   .hero-content {
-    padding: 15px 12px;
+    padding: 15px;
+    text-align: center;
   }
   
   .hero-content h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 1.9rem;
+    margin: 0 auto 6px auto;
+    text-align: center;
   }
   
-  .tagline {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+  .hero-content .tagline {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
   }
   
   .video-background video {
@@ -706,20 +749,19 @@ footer {
   main.hero {
     min-height: 60vh;
     max-height: 60vh;
-    padding: 1vh 0;
   }
   
   .video-background {
-    height: calc(60vh - 2vh);
-    max-height: calc(60vh - 2vh);
-    top: 1vh;
+    height: 60vh;
+    max-height: 60vh;
+    top: 0;
   }
   
   .hero-content h1 {
     font-size: 2rem;
   }
   
-  .tagline {
+  .hero-content .tagline {
     font-size: 0.95rem;
   }
 }
@@ -803,6 +845,19 @@ body.dark .track-title {
 
 body.dark .about-container a {
   color: #cca764;
+}
+
+/* Dark mode hero content */
+body.dark .hero-content {
+  background-color: #121212 !important;
+}
+
+body.dark .hero-content h1 {
+  color: #e0e0e0 !important;
+}
+
+body.dark .hero-content .tagline {
+  color: #ccc !important;
 }
 
 /* Dark mode logo switching */
