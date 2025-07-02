@@ -526,8 +526,6 @@ footer {
   }
 }
 
-/* Replace the existing mobile responsive sections with these updated styles */
-
 /* MOBILE RESPONSIVE IMPROVEMENTS*/
 @media (max-width: 400px) {
   .navbar {
@@ -549,13 +547,13 @@ footer {
   
   /* MOBILE HERO VIDEO IMPROVEMENTS */
   main.hero {
-    min-height: 50vh; /* Reduced from 70vh */
-    max-height: 50vh; /* Added max-height constraint */
+    min-height: 60vh; /* Increased from 50vh */
+    max-height: 60vh; /* Added max-height constraint */
   }
   
   .video-background {
     height: 100%;
-    max-height: 50vh; /* Constrain video container height */
+    max-height: 60vh; /* Constrain video container height */
     overflow: hidden;
   }
   
@@ -647,12 +645,12 @@ footer {
   
   /* MOBILE HERO VIDEO IMPROVEMENTS */
   main.hero {
-    min-height: 45vh; /* Further reduced for smaller screens */
-    max-height: 45vh;
+    min-height: 55vh; /* Increased from 45vh */
+    max-height: 55vh;
   }
   
   .video-background {
-    max-height: 45vh;
+    max-height: 55vh;
   }
   
   .hero-content {
@@ -702,12 +700,12 @@ footer {
 /* Landscape orientation - keep video smaller in landscape too */
 @media (max-width: 768px) and (orientation: landscape) {
   main.hero {
-    min-height: 60vh; /* Reduced from 80vh */
-    max-height: 60vh;
+    min-height: 70vh; /* Increased from 60vh */
+    max-height: 70vh;
   }
   
   .video-background {
-    max-height: 60vh;
+    max-height: 70vh;
   }
   
   .hero-content h1 {
