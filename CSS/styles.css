@@ -137,6 +137,11 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+/* Mobile-only dark mode toggle - hidden by default */
+.dark-mode-toggle.mobile-only {
+  display: none;
+}
+
 /* Hamburger Menu Styling */
 .hamburger {
   display: none;
@@ -214,30 +219,6 @@ input:checked + .slider:before {
   color: #cca764;
 }
 
-.mobile-social-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-.mobile-social-links a {
-  color: #444;
-  font-size: 1.8rem;
-  transition: color 0.3s;
-}
-
-.mobile-social-links a:hover {
-  color: #b39c5d;
-}
-
-.mobile-dark-mode {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
 /* Hero Section with Video Background */
 main.hero {
   flex: 1;
@@ -300,6 +281,30 @@ main.hero {
   color: #666;
   font-weight: 400;
   text-align: center;
+}
+
+/* Hero social links styling */
+.hero-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.hero-social-links a {
+  color: #444;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.hero-social-links a:hover {
+  color: #cca764;
+  transform: translateY(-2px);
+}
+
+.hero-social-links a:active {
+  transform: translateY(0);
 }
 
 .tagline {
@@ -573,13 +578,27 @@ footer {
     display: flex;
   }
 
-  .nav-center,
-  .nav-right {
+  .nav-center {
     display: none;
   }
 
   .mobile-menu {
     display: block;
+  }
+  
+  /* Hide desktop nav-right items, show mobile dark mode toggle */
+  .nav-right .dark-mode-toggle:not(.mobile-only),
+  .nav-right .fas.fa-moon,
+  .nav-right a {
+    display: none;
+  }
+  
+  .dark-mode-toggle.mobile-only {
+    display: inline-block;
+  }
+  
+  .nav-right {
+    gap: 10px;
   }
   
   /* MOBILE HERO VIDEO IMPROVEMENTS */
@@ -628,6 +647,15 @@ footer {
     font-size: 1.1rem;
     text-align: center;
     margin: 0 auto;
+  }
+  
+  .hero-social-links {
+    margin-top: 15px;
+    gap: 30px;
+  }
+  
+  .hero-social-links a {
+    font-size: 2.2rem;
   }
   
   /* Mobile sheet music layout in 2 columns */
@@ -683,10 +711,6 @@ footer {
     font-size: 1.1rem;
   }
   
-  .mobile-social-links a {
-    font-size: 1.6rem;
-  }
-  
   /* SMALLER MOBILE HERO VIDEO */
   main.hero {
     min-height: 45vh;
@@ -713,6 +737,15 @@ footer {
     font-size: 1rem;
     text-align: center;
     margin: 0 auto;
+  }
+  
+  .hero-social-links {
+    margin-top: 12px;
+    gap: 25px;
+  }
+  
+  .hero-social-links a {
+    font-size: 2rem;
   }
   
   .video-background video {
@@ -795,8 +828,7 @@ body.dark .mobile-menu {
   background-color: #2d2d2d;
 }
 
-body.dark .mobile-nav-links a,
-body.dark .mobile-social-links a {
+body.dark .mobile-nav-links a {
   color: #e0e0e0;
 }
 
@@ -860,6 +892,15 @@ body.dark .hero-content .tagline {
   color: #ccc !important;
 }
 
+/* Dark mode hero social links */
+body.dark .hero-social-links a {
+  color: #e0e0e0;
+}
+
+body.dark .hero-social-links a:hover {
+  color: #cca764;
+}
+
 /* Dark mode logo switching */
 body.dark .logo-light {
   display: none;
@@ -867,62 +908,4 @@ body.dark .logo-light {
 
 body.dark .logo-dark {
   display: block;
-}
-
-/* Add this CSS to your existing stylesheet */
-
-/* Hero social links styling */
-.hero-social-links {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 20px;
-}
-
-.hero-social-links a {
-  color: #444;
-  font-size: 2rem;
-  transition: color 0.3s ease, transform 0.2s ease;
-  text-decoration: none;
-}
-
-.hero-social-links a:hover {
-  color: #cca764;
-  transform: translateY(-2px);
-}
-
-.hero-social-links a:active {
-  transform: translateY(0);
-}
-
-/* Mobile responsive adjustments for hero social links */
-@media (max-width: 768px) {
-  .hero-social-links {
-    margin-top: 15px;
-    gap: 30px;
-  }
-  
-  .hero-social-links a {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-social-links {
-    margin-top: 12px;
-    gap: 25px;
-  }
-  
-  .hero-social-links a {
-    font-size: 2rem;
-  }
-}
-
-/* Dark mode styling for hero social links */
-body.dark .hero-social-links a {
-  color: #e0e0e0;
-}
-
-body.dark .hero-social-links a:hover {
-  color: #cca764;
 }
