@@ -547,16 +547,16 @@ footer {
   
   /* MOBILE HERO VIDEO IMPROVEMENTS */
   main.hero {
-    min-height: 60vh;
-    max-height: 60vh;
-    padding: 2vh 0; /* Add even padding top and bottom */
+    min-height: 50vh;
+    max-height: 50vh;
+    padding: 1vh 0; /* Minimal padding */
   }
   
   .video-background {
-    height: calc(60vh - 4vh); /* Account for padding */
-    max-height: calc(60vh - 4vh);
+    height: calc(50vh - 2vh); /* Account for minimal padding */
+    max-height: calc(50vh - 2vh);
     overflow: hidden;
-    top: 2vh; /* Center the video vertically */
+    top: 1vh; /* Center the video vertically */
   }
   
   .video-background video {
@@ -647,15 +647,15 @@ footer {
   
   /* SMALLER MOBILE HERO VIDEO */
   main.hero {
-    min-height: 55vh;
-    max-height: 55vh;
-    padding: 2.5vh 0; /* Slightly more padding for smaller screens */
+    min-height: 45vh;
+    max-height: 45vh;
+    padding: 1vh 0; /* Minimal padding for smaller screens */
   }
   
   .video-background {
-    height: calc(55vh - 5vh); /* Account for padding */
-    max-height: calc(55vh - 5vh);
-    top: 2.5vh; /* Center the video vertically */
+    height: calc(45vh - 2vh); /* Account for minimal padding */
+    max-height: calc(45vh - 2vh);
+    top: 1vh; /* Center the video vertically */
   }
   
   .hero-content {
@@ -704,15 +704,15 @@ footer {
 /* Landscape orientation */
 @media (max-width: 768px) and (orientation: landscape) {
   main.hero {
-    min-height: 70vh;
-    max-height: 70vh;
-    padding: 2vh 0;
+    min-height: 60vh;
+    max-height: 60vh;
+    padding: 1vh 0;
   }
   
   .video-background {
-    height: calc(70vh - 4vh);
-    max-height: calc(70vh - 4vh);
-    top: 2vh;
+    height: calc(60vh - 2vh);
+    max-height: calc(60vh - 2vh);
+    top: 1vh;
   }
   
   .hero-content h1 {
