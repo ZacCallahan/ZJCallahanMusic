@@ -4,7 +4,7 @@ This is the first of my upcoming portfolio website. I wanted to create this webs
 I was aiming for a sleek, minimalist, and professional style that shows off some of my music in a way that creates a pleasant user experience.
 This site is currently live, so please check it out at www.zaccallahanmusic.com
 
-# Zac Callahan - Composer Website
+# Zac Callahan Music
 
 A modern, responsive portfolio website for my composer and musician alter ego, featuring original compositions, sheet music, and background information.
 
@@ -108,7 +108,6 @@ Update the CSS custom properties in `styles.css`:
 This is a personal portfolio website. For questions or suggestions:
 
 - Email: calla1296@gmail.com
-- [Spotify](https://open.spotify.com/artist/1PnvmzPFCPSqe1toCb2gGx)
 
 ## 🔄 Updates & Maintenance
 
