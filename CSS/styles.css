@@ -506,13 +506,6 @@ footer {
   margin-top: auto;
 }
 
-/* Responsive Design */
-@media (max-width: 850px) {
-  .track-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Tablet and smaller desktop screens */
 @media (max-width: 992px) {
   .score-gallery {
@@ -556,12 +549,14 @@ footer {
   main.hero {
     min-height: 60vh;
     max-height: 60vh;
+    padding: 2vh 0; /* Add even padding top and bottom */
   }
   
   .video-background {
-    height: 100%;
-    max-height: 60vh;
+    height: calc(60vh - 4vh); /* Account for padding */
+    max-height: calc(60vh - 4vh);
     overflow: hidden;
+    top: 2vh; /* Center the video vertically */
   }
   
   .video-background video {
@@ -654,10 +649,13 @@ footer {
   main.hero {
     min-height: 55vh;
     max-height: 55vh;
+    padding: 2.5vh 0; /* Slightly more padding for smaller screens */
   }
   
   .video-background {
-    max-height: 55vh;
+    height: calc(55vh - 5vh); /* Account for padding */
+    max-height: calc(55vh - 5vh);
+    top: 2.5vh; /* Center the video vertically */
   }
   
   .hero-content {
@@ -708,10 +706,13 @@ footer {
   main.hero {
     min-height: 70vh;
     max-height: 70vh;
+    padding: 2vh 0;
   }
   
   .video-background {
-    max-height: 70vh;
+    height: calc(70vh - 4vh);
+    max-height: calc(70vh - 4vh);
+    top: 2vh;
   }
   
   .hero-content h1 {
@@ -722,136 +723,7 @@ footer {
     font-size: 0.95rem;
   }
 }
-  
-  /* Mobile sheet music layout in 2 columns */
-  .score-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 600px;
-  }
-  
-  .score-card {
-    max-width: 280px;
-  }
-  
-  .sheet-music-page {
-    padding: 1.5rem 1rem 3rem;
-  }
-  
-  .sheet-music-page h1 {
-    font-size: 2.2rem;
-  }
-  
-  .sheet-music-page .intro {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-}
 
-@media (max-width: 480px) {
-  .navbar {
-    padding: 10px 15px;
-  }
-  
-  .nav-left .logo {
-    height: 50px;
-  }
-  
-  .logo-light {
-    height: 50px;
-  }
-  
-  .logo-dark {
-    height: 50px;
-  }
-  
-  .mobile-menu {
-    top: 71px;
-    height: calc(100vh - 71px);
-    padding: 20px 15px;
-  }
-  
-  .mobile-nav-links a {
-    font-size: 1.1rem;
-  }
-  
-  .mobile-social-links a {
-    font-size: 1.6rem;
-  }
-  
-  /* MOBILE HERO VIDEO IMPROVEMENTS */
-  main.hero {
-    min-height: 55vh; /* Increased from 45vh */
-    max-height: 55vh;
-  }
-  
-  .video-background {
-    max-height: 55vh;
-  }
-  
-  .hero-content {
-    padding: 15px 12px; /* More compact padding */
-  }
-  
-  .hero-content h1 {
-    font-size: 1.8rem; /* Smaller text for small screens */
-    margin-bottom: 10px;
-  }
-  
-  .tagline {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-  }
-  
-  .video-background video {
-    opacity: 0.8;
-    filter: blur(1px);
-    /* Removed transform scale that was causing overflow */
-  }
-  
-  .video-overlay {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Single columns for small screens */
-  .score-gallery {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    max-width: 320px;
-  }
-  
-  .score-card {
-    max-width: 300px;
-  }
-  
-  .sheet-music-page h1 {
-    font-size: 1.8rem;
-  }
-  
-  .sheet-music-page .intro {
-    font-size: 0.95rem;
-  }
-}
-
-/* keep video smaller in landscape */
-@media (max-width: 768px) and (orientation: landscape) {
-  main.hero {
-    min-height: 70vh; 
-    max-height: 70vh;
-  }
-  
-  .video-background {
-    max-height: 70vh;
-  }
-  
-  .hero-content h1 {
-    font-size: 2rem; 
-  }
-  
-  .tagline {
-    font-size: 0.95rem;
-  }
-}
 /* Dark Mode Styles */
 body.dark {
   background-color: #121212;
