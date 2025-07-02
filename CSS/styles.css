@@ -526,8 +526,15 @@ footer {
   }
 }
 
-/* MOBILE RESPONSIVE IMPROVEMENTS*/
-@media (max-width: 400px) {
+/* Responsive Design */
+@media (max-width: 850px) {
+  .track-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE RESPONSIVE - Show hamburger menu for tablets and mobile */
+@media (max-width: 768px) {
   .navbar {
     padding: 10px 20px;
   }
@@ -547,13 +554,13 @@ footer {
   
   /* MOBILE HERO VIDEO IMPROVEMENTS */
   main.hero {
-    min-height: 60vh; /* Increased from 50vh */
-    max-height: 60vh; /* Added max-height constraint */
+    min-height: 60vh;
+    max-height: 60vh;
   }
   
   .video-background {
     height: 100%;
-    max-height: 60vh; /* Constrain video container height */
+    max-height: 60vh;
     overflow: hidden;
   }
   
@@ -564,7 +571,6 @@ footer {
     object-position: center center;
     opacity: 0.85;
     filter: blur(0.5px);
-    /* Remove transform scale to prevent overflow */
   }
   
   .video-overlay {
@@ -572,13 +578,13 @@ footer {
   }
   
   .hero-content {
-    padding: 20px 15px; /* Reduced padding */
+    padding: 20px 15px;
     position: relative;
     z-index: 1;
   }
   
   .hero-content h1 {
-    font-size: 2.2rem; /* Slightly reduced */
+    font-size: 2.2rem;
     margin-bottom: 12px;
   }
   
@@ -586,6 +592,136 @@ footer {
     font-size: 1rem;
     margin-bottom: 20px;
   }
+  
+  /* Mobile sheet music layout in 2 columns */
+  .score-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 600px;
+  }
+  
+  .score-card {
+    max-width: 280px;
+  }
+  
+  .sheet-music-page {
+    padding: 1.5rem 1rem 3rem;
+  }
+  
+  .sheet-music-page h1 {
+    font-size: 2.2rem;
+  }
+  
+  .sheet-music-page .intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* SMALLER MOBILE SCREENS */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .nav-left .logo {
+    height: 50px;
+  }
+  
+  .logo-light {
+    height: 50px;
+  }
+  
+  .logo-dark {
+    height: 50px;
+  }
+  
+  .mobile-menu {
+    top: 71px;
+    height: calc(100vh - 71px);
+    padding: 20px 15px;
+  }
+  
+  .mobile-nav-links a {
+    font-size: 1.1rem;
+  }
+  
+  .mobile-social-links a {
+    font-size: 1.6rem;
+  }
+  
+  /* SMALLER MOBILE HERO VIDEO */
+  main.hero {
+    min-height: 55vh;
+    max-height: 55vh;
+  }
+  
+  .video-background {
+    max-height: 55vh;
+  }
+  
+  .hero-content {
+    padding: 15px 12px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .tagline {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .video-background video {
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+  
+  .video-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Single column for small screens */
+  .score-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 320px;
+  }
+  
+  .score-card {
+    max-width: 300px;
+  }
+  
+  .sheet-music-page h1 {
+    font-size: 1.8rem;
+  }
+  
+  .sheet-music-page .intro {
+    font-size: 0.95rem;
+  }
+}
+
+/* Landscape orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  main.hero {
+    min-height: 70vh;
+    max-height: 70vh;
+  }
+  
+  .video-background {
+    max-height: 70vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 0.95rem;
+  }
+}
   
   /* Mobile sheet music layout in 2 columns */
   .score-gallery {
@@ -697,10 +833,10 @@ footer {
   }
 }
 
-/* Landscape orientation - keep video smaller in landscape too */
+/* keep video smaller in landscape */
 @media (max-width: 768px) and (orientation: landscape) {
   main.hero {
-    min-height: 70vh; /* Increased from 60vh */
+    min-height: 70vh; 
     max-height: 70vh;
   }
   
@@ -709,7 +845,7 @@ footer {
   }
   
   .hero-content h1 {
-    font-size: 2rem; /* Slightly smaller */
+    font-size: 2rem; 
   }
   
   .tagline {
