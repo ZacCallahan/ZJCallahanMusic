@@ -527,7 +527,7 @@ footer {
 }
 
 /* MOBILE RESPONSIVE IMPROVEMENTS*/
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .navbar {
     padding: 10px 20px;
   }
