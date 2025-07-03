@@ -1,3 +1,4 @@
+/* Base styles */
 html, body {
   height: 100%;
   margin: 0;
@@ -17,7 +18,7 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* Navbar */
+/* Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -41,7 +42,6 @@ body.menu-open {
   height: 70px;
 }
 
-/* Logo switching for dark mode */
 .logo-light {
   display: block;
 }
@@ -87,7 +87,7 @@ body.menu-open {
   color: #b39c5d;
 }
 
-/* Dark mode toggle styling */
+/* Dark mode toggle */
 .dark-mode-toggle {
   position: relative;
   display: inline-block;
@@ -137,12 +137,11 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Mobile-only dark mode toggle - hidden by default */
 .dark-mode-toggle.mobile-only {
   display: none;
 }
 
-/* Hamburger Menu Styling */
+/* Mobile menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -178,7 +177,6 @@ input:checked + .slider:before {
   transform: translateY(-10.5px) rotate(-45deg);
 }
 
-/* Mobile Menu */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -219,7 +217,7 @@ input:checked + .slider:before {
   color: #cca764;
 }
 
-/* Hero Section with Video Background */
+/* Hero section */
 main.hero {
   flex: 1;
   position: relative;
@@ -256,7 +254,6 @@ main.hero {
   z-index: -1;
 }
 
-/* Hero content - hidden by default on ALL screen sizes */
 .hero-content {
   display: none !important;
   text-align: center;
@@ -283,7 +280,6 @@ main.hero {
   text-align: center;
 }
 
-/* Hero social links styling */
 .hero-social-links {
   display: flex;
   justify-content: center;
@@ -325,12 +321,11 @@ main.hero {
   }
 }
 
-/* Remove old media container styles */
 .media-container iframe {
   display: none;
 }
 
-/* About Page */
+/* About page */
 main.about-page {
   flex: 1;
   padding: 20px;
@@ -383,7 +378,7 @@ main.about-page {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Compositions Page */
+/* Compositions page */
 .compositions-page {
   max-width: 900px;
   margin: 0 auto;
@@ -439,7 +434,7 @@ main.about-page {
   border-radius: 6px;
 }
 
-/* Sheet Music Page */
+/* Sheet music page */
 .sheet-music-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -530,7 +525,6 @@ main.about-page {
   background-color: #b39c5d;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 0.5rem 0;
@@ -538,7 +532,7 @@ footer {
   margin-top: auto;
 }
 
-/* Tablet and smaller desktop screens */
+/* Responsive breakpoints */
 @media (max-width: 992px) {
   .score-gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -550,25 +544,22 @@ footer {
     padding: 2rem 1.5rem 4rem;
   }
   
-  /* Ensure hero content stays hidden on tablets/desktop */
   .hero-content {
     display: none !important;
   }
 }
 
-/* Responsive Design */
 @media (max-width: 850px) {
   .track-wrapper {
     grid-template-columns: 1fr;
   }
   
-  /* Ensure hero content stays hidden on smaller desktop screens */
   .hero-content {
     display: none !important;
   }
 }
 
-/* MOBILE RESPONSIVE - Show hamburger menu for tablets and mobile */
+/* Mobile */
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 20px;
@@ -586,7 +577,6 @@ footer {
     display: block;
   }
   
-  /* Hide desktop nav-right items, show mobile dark mode toggle */
   .nav-right .dark-mode-toggle:not(.mobile-only),
   .nav-right .fas.fa-moon,
   .nav-right a {
@@ -601,7 +591,6 @@ footer {
     gap: 10px;
   }
   
-  /* MOBILE HERO VIDEO IMPROVEMENTS */
   main.hero {
     min-height: 50vh;
     max-height: 50vh;
@@ -627,7 +616,6 @@ footer {
     background: rgba(0, 0, 0, 0.45);
   }
   
-  /* Show hero content ONLY on mobile */
   .hero-content {
     display: block !important;
     padding: 20px;
@@ -658,7 +646,6 @@ footer {
     font-size: 2.2rem;
   }
   
-  /* Mobile sheet music layout in 2 columns */
   .score-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -683,7 +670,7 @@ footer {
   }
 }
 
-/* SMALLER MOBILE SCREENS */
+/* Small mobile */
 @media (max-width: 480px) {
   .navbar {
     padding: 10px 15px;
@@ -711,7 +698,6 @@ footer {
     font-size: 1.1rem;
   }
   
-  /* SMALLER MOBILE HERO VIDEO */
   main.hero {
     min-height: 45vh;
     max-height: 45vh;
@@ -757,7 +743,6 @@ footer {
     background: rgba(0, 0, 0, 0.5);
   }
   
-  /* Single column for small screens */
   .score-gallery {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -777,7 +762,7 @@ footer {
   }
 }
 
-/* Landscape orientation */
+/* Landscape mobile */
 @media (max-width: 768px) and (orientation: landscape) {
   main.hero {
     min-height: 60vh;
@@ -799,113 +784,107 @@ footer {
   }
 }
 
-/* Dark Mode Styles */
-body.dark {
+/* Dark mode */
+html.dark body {
   background-color: #121212;
   color: #e0e0e0;
 }
 
-body.dark .navbar {
+html.dark .navbar {
   background-color: #1e1e1e;
   border-bottom: 1px solid #333;
 }
 
-body.dark .nav-center li a,
-body.dark .nav-right a {
+html.dark .nav-center li a,
+html.dark .nav-right a {
   color: #e0e0e0;
 }
 
-body.dark .nav-center li a:hover,
-body.dark .nav-right a:hover {
+html.dark .nav-center li a:hover,
+html.dark .nav-right a:hover {
   color: #cca764;
 }
 
-body.dark .hamburger span {
+html.dark .hamburger span {
   background-color: #e0e0e0;
 }
 
-body.dark .mobile-menu {
+html.dark .mobile-menu {
   background-color: #2d2d2d;
 }
 
-body.dark .mobile-nav-links a {
+html.dark .mobile-nav-links a {
   color: #e0e0e0;
 }
 
-body.dark .mobile-nav-links a {
+html.dark .mobile-nav-links a {
   border-bottom-color: #444;
 }
 
-/* Dark mode video overlay */
-body.dark .video-overlay {
+html.dark .video-overlay {
   background: rgba(0, 0, 0, 0.5); 
 }
 
-/* Dark mode about page */
-body.dark main.about-page {
+html.dark main.about-page {
   background-color: #121212;
 }
 
-body.dark .about-container,
-body.dark .track-card,
-body.dark .score-card {
+html.dark .about-container,
+html.dark .track-card,
+html.dark .score-card {
   background-color: #1f1f1f;
   color: #ddd;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-body.dark .download-btn {
+html.dark .download-btn {
   background-color: #b38b4d;
 }
 
-body.dark footer {
+html.dark footer {
   background-color: #1c1c1c;
   color: #aaa;
 }
 
-/* text changes in dark mode */
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark p,
-body.dark .tagline,
-body.dark .intro,
-body.dark .caption,
-body.dark .track-title {
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark p,
+html.dark .tagline,
+html.dark .intro,
+html.dark .caption,
+html.dark .track-title {
   color: #e0e0e0;
 }
 
-body.dark .about-container a {
+html.dark .about-container a {
   color: #cca764;
 }
 
-/* Dark mode hero content */
-body.dark .hero-content {
+html.dark .hero-content {
   background-color: #121212 !important;
 }
 
-body.dark .hero-content h1 {
+html.dark .hero-content h1 {
   color: #e0e0e0 !important;
 }
 
-body.dark .hero-content .tagline {
+html.dark .hero-content .tagline {
   color: #ccc !important;
 }
 
-/* Dark mode hero social links */
-body.dark .hero-social-links a {
+html.dark .hero-social-links a {
   color: #e0e0e0;
 }
 
-body.dark .hero-social-links a:hover {
+html.dark .hero-social-links a:hover {
   color: #cca764;
 }
 
-/* Dark mode logo switching */
-body.dark .logo-light {
+html.dark .logo-light {
   display: none;
 }
 
-body.dark .logo-dark {
+html.dark .logo-dark {
   display: block;
 }
